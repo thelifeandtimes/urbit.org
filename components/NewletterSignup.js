@@ -1,3 +1,5 @@
+import { push } from "@socialgouv/matomo-next";
+
 export default function NewsletterSignup(props) {
   return (
     <form
@@ -26,8 +28,8 @@ export default function NewsletterSignup(props) {
               className="type-ui text-wall-500 bg-transparent"
               type="submit"
               name="subscribe"
+              onClick={() => push(["trackEvent", "Mailing List", "Subscribe"])}
             >
-              {/* onClick={() => _paq.push(['trackEvent', 'Mailing List', 'Subscribe'])}> */}
               Sign Up
             </button>
           </div>

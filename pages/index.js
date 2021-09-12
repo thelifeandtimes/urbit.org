@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import { push } from "@socialgouv/matomo-next";
+
 import Container from "../components/Container";
 import Section from "../components/Section";
 import SingleColumn from "../components/SingleColumn";
@@ -34,7 +36,10 @@ export default function Home({ posts, events, openGrantsCount, search }) {
     } else if (agent.includes("Mac")) {
       return (
         <a href="https://github.com/urbit/port/releases/latest/download/Port.dmg">
-          <button className="button-lg type-ui mb-5 bg-green-400 text-white">
+          <button
+            onClick={() => push(["trackEvent", "Mailing List", "Subscribe"])}
+            className="button-lg type-ui mb-5 bg-green-400 text-white"
+          >
             Download For macOS
           </button>
         </a>
