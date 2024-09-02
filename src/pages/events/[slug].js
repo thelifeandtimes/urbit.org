@@ -64,8 +64,15 @@ export default function Event({ post, markdown }) {
               >
                 Register
               </Link>
-            )}
-          </div>
+            )
+            {post.event_details (
+              <Link
+                className="btn bg-primary hover:bg-secondary text-surface w-fit"
+                href={post.event_details}
+              >
+                Details
+              </Link>
+            )}}
         </Section>
         <Section className="markdown layout-narrow" divider={"border-primary"}>
           <Markdown.render content={JSON.parse(markdown)} />
@@ -90,6 +97,7 @@ export async function getStaticProps({ params }) {
       "hosts",
       "image",
       "registration_url",
+      "event_details",
       "pinned",
       "dark",
       "darken_image",
